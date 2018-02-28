@@ -4,6 +4,30 @@
   text-align: center
 }
 
-@media only screen and (max-width: 767px) {
-#Header { font-size: 22px !important; }
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+#Header { font-size: 42px !important; }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+#Header { font-size: 42px !important; }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+#Header { font-size: 42px !important; }
 }

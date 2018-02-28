@@ -11,7 +11,11 @@
   and (min-device-width: 414px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3) {
-#Header { font-size: 42px !important; }
+#Header { font-size: 42px !important;
+color: red;
+size: +1;
+text-align: center
+}
 }
 
 /* Portrait */
@@ -20,7 +24,11 @@
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
-#Header { font-size: 42px !important; }
+#Header { font-size: 42px !important;
+color: red;
+size: +1;
+text-align: center
+}
 }
 
 /* Landscape */
@@ -29,5 +37,9 @@
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-#Header { font-size: 42px !important; }
+#Header { font-size: 42px !important;
+color: red;
+size: +1;
+text-align: center
+ }
 }

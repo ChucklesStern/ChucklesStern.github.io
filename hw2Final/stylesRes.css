@@ -1,0 +1,256 @@
+/*
+Adam C Stern
+CIS128 HW2
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Color, typography and basic layout
+ * Colors:
+ * - #eaf8fb -> light cream (background)
+ * - #594846 -> Dark brown (body text, rules)
+ * - #42628F -> Dark blue (visited link text)
+ * - #7b96bc -> Medium-light blue (navigation and footer background)
+ * - #53a7ea -> Light Blue-CSS3 Animation change
+ */
+body {
+	background: #eaf8fb;
+	color: #594846;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:100%;
+  transition:all 0.3s ease;
+
+
+}
+
+a, a:visited {
+  color: #42628F;
+}
+
+p {
+  margin: 0.5em 0.25em;
+}
+
+h1, h2 {
+border:0; margin:0;
+padding-left:15px;
+
+}
+
+@-webkit-keyframes swing
+       {
+           15%
+           {
+               -webkit-transform: translateX(5px);
+               transform: translateX(5px);
+           }
+
+           30%
+           {
+               -webkit-transform: translateX(-5px);
+               transform: translateX(-5px);
+           }
+
+           50%
+           {
+               -webkit-transform: translateX(3px);
+               transform: translateX(3px);
+           }
+
+           65%
+           {
+               -webkit-transform: translateX(-3px);
+               transform: translateX(-3px);
+           }
+
+           80%
+           {
+               -webkit-transform: translateX(2px);
+               transform: translateX(2px);
+           }
+
+           100%
+           {
+               -webkit-transform: translateX(0);
+               transform: translateX(0);
+           }
+       }
+
+       @keyframes swing
+       {
+           15%
+           {
+               -webkit-transform: translateX(5px);
+               transform: translateX(5px);
+           }
+
+           30%
+           {
+               -webkit-transform: translateX(-5px);
+               transform: translateX(-5px);
+           }
+
+           50%
+           {
+               -webkit-transform: translateX(3px);
+               transform: translateX(3px);
+           }
+
+           65%
+           {
+               -webkit-transform: translateX(-3px);
+               transform: translateX(-3px);
+           }
+
+           80%
+           {
+               -webkit-transform: translateX(2px);
+               transform: translateX(2px);
+           }
+
+           100%
+           {
+               -webkit-transform: translateX(0);
+               transform: translateX(0);
+           }
+       }
+
+
+.EnlargeColor:hover {
+
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+            color:#53a7ea;
+}
+
+dl {
+  margin: 0 0.5em;
+}
+
+dt {
+  font-weight: bold;
+  margin: 0.5em 1em 0.5em 0;
+  border-bottom: 1px dashed #7b96bc;
+}
+
+.intro {
+  font-size: 1.15em;
+  line-height: 1.3em;
+  text-align: justify;
+  margin: 0.5em;
+  font-weight: bold;
+}
+.navigation {
+  background-color:#7b96bc;
+  border-bottom: 2px solid #594846;
+}
+
+.navigation ul li {
+  text-align: center;
+  display: block;
+  float: left;
+  padding: 0.25em 0;
+}
+
+.navigation li a {
+  color: #f9f3e9;
+  font-variant: small-caps;
+  text-decoration: none;
+}
+
+.header {
+
+   background-color:#333; /* a more specific way to set a background color */
+    background-image:url(images/headerbkgd.png);
+    background-repeat:no-repeat; /* sets a background image to repeat, repeat-x, repeat-y or not at all as written in this rule */
+		background-position:left bottom;/* sets a background image position */
+		color:#fff;	/* sets the the color of all header text to white */
+		-webkit-border-bottom-right-radius: 4px;
+		-webkit-border-bottom-left-radius: 4px;
+		-moz-border-radius-bottomright: 4px;
+		-moz-border-radius-bottomleft: 4px;
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;	/* these 6 lines of border-radius code make rounded corners for the bottom work in firefox, safari, chrome, opera and IE9 */
+		margin:0 auto; /* by declaring a width on any block element (like a div), giving it a css property of margin:0 auto will center that block element on page */
+		min-height:130px;	/* setting a minimum height of an element means that it can grow to be bigger, if there is a lot of content in it. However, if it doesn't have enough content, it will be at the very least (in this example) 130 pixels tall */
+
+}
+
+
+#points ul {
+  list-style-image: url('images/point.png');
+  margin: 0.5em 0 1em 0.5em;
+  padding-left: 1em;
+}
+
+#points ul li {
+  margin: 0.5em 1em;
+}
+
+.footer {
+  background-color: #7b96bc;
+  color: #f9f3e9;
+  text-align: center;
+  padding: .5em 0;
+  font-style: italic;
+}
+
+
+img, iframe {max-width:100%;}
+
+/* Structure */
+@media screen and (min-width:481px) {
+body, .header, .navigation, .footer {
+  width: 100%;
+}
+
+
+.header, .navigation, .footer {
+  clear: both;
+}
+
+.column {
+  margin: 10px 10px 0 0;
+}
+
+.navigation {
+  min-height: 25px;
+}
+
+.navigation ul li {
+  width: 33.33333%; /* 960/3 */
+}
+
+.header {
+
+  background-image:url(images/headerbkgd.png);
+  height: 200px;
+}
+
+#visit {
+  width: 25%;
+  float: left;
+}
+
+#points {
+  width: 25%;
+  float: right;
+}
+
+#main {
+  margin: 10px   27.08333%   0   26.04166%;
+}
+}
+
+
+@media screen and (max-width:480px) {
+body, .header, .footer, .navigation {width:100%;font-size:120%; text-align: center;}
+.column {margin: 10px 0; border-bottom:1px dashed #7b96bc;}
+.navigation ul li {width: 33.33334375%;}
+#visit, #points, #main {width:100%;}
+}

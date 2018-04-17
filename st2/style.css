@@ -46,6 +46,11 @@ element.style {
     overflow: hidden;
 }
 
+#location {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+}
 #map {
     width: 100%;
     height: 100%;

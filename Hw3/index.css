@@ -1,0 +1,75 @@
+
+
+#collapseTwoFourA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#collapseTwoOneA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#collapseTwoTwoA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#collapseTwoThreeA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#collapseTwoFourA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#collapseTwoFiveA {
+  background-color: #555;
+  overflow: auto;
+}
+
+#accordion21A {
+  background-color: #641E16;
+}
+
+#accordion21B {
+  background-color: #CD5C5C;
+  overflow: auto;
+}
+
+#accordion21C {
+  background-color: #F08080;
+  overflow: auto;
+}
+
+#accordion21D {
+  background-color: #FA8072;
+}
+
+#accordion21E {
+  background-color: #E9967A;
+  overflow: auto;
+}
+
+#accordion21F {
+  background-color: #FFA07A;
+  overflow: auto;
+}
+
+img {
+    height:150px;
+    width:20%;
+    float: left;
+}
+
+
+
+.panel-body {
+  text-align: left;
+}
+
+#fbIcon {
+  padding-right: 10px;
+}

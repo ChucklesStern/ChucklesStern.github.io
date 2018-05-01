@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="index.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homework 3</title>
@@ -11,20 +10,89 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
 
+    <script>
+
+    window.onload = getLocation;
+
+    var geo = navigator.geolocation;     /*     Here we will check if the browser supports the Geolocation API; if exists, then we will display the location     */
+
+    function getLocation() {
+        if( geo ) {
+            geo.getCurrentPosition( displayLocation );
+               }
+               else  { alert( "Oops, Geolocation API is not supported");
+               }
+    }
+
+    /*     This function displays the latitude and longitude when the browser has a location.     */
+
+        function displayLocation( position ) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var div = document.getElementById( 'location' );
+            div.innerHTML = "You are at Latitude: " + latitude + ", Longitude: " + longitude;
+            // Call showMap function once we've updated other div's on the page
+    displayMap( position.coords );
+    }
+
+    // Global Variable that will hold Google Map
+    var map;
+    /*
+    This method is used to display Google Map.
+    */
+    function displayMap( coords ) {
+    var googleLatAndLong = new google.maps.LatLng( coords.latitude, coords.longitude );
+    var glatLong2 = new google.maps.LatLng(34.7618242, -120.6776182);
+    console.log(coords);
+    var mapOptions = {
+    zoom: 15,
+    center: googleLatAndLong,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+
+    var mapDiv = document.getElementById( 'map' );
+    map = new google.maps.Map( mapDiv, mapOptions );
+
+    var title = 'Your Location';
+    var content = 'You are here: ' + coords.latitude + ', ' + coords.longitude;
+    addMarker( map, googleLatAndLong, title, content );
+//addMarker(map, glatLong2 , "Main Store", "Xbox One X in stock!" );
+    }
+
+
+
+    function addMarker ( map, latlong, title, content ) {
+    var markerOptions = {
+    position: latlong,
+    map: map,
+    title: title,
+    clickable: true
+    };
+    var marker = new google.maps.Marker( markerOptions );
+    var infoWindowOptions = {
+    content: content,
+    position: latlong
+    };
+    var infoWindow = new google.maps.InfoWindow( infoWindowOptions );
+    google.maps.event.addListener( marker, 'click', function() {
+    infoWindow.open(map);
+    });
+    }
+    </script>
 
 
 </head>
 <body>
-    <main>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.html">Products</a>
@@ -35,13 +103,23 @@
             <li class="nav-item">
               <a class="nav-link" href="location.html">Location</a>
             </li>
+            <li class="nav-item">
+          <a class="nav-link" href="offline.html">Offline</a>
+        </li>
           </ul>
         </div>
       </nav>
         <h1 id="Header">This is the Location page.</h1>
+        <div id="location" >
+You are at Latitude: _________, Longitude: _________
+</div>
+            <div id="map"></div>
 
-    <p>
-    When we open our store, we will let you know our location here even with directions from your place to it!!!</p>
-    </main>
+
+    <script>
+
+      </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjdixASsShSdX8LICgX22wQCctahotvI8&callback=initMap"
+  ></script>
 </body>
 </html>

@@ -3,8 +3,7 @@ var urlsToCache = [
   '/',
   '/index.css',
   '/index.html',
-  '/offline.html',
-  '/products.html',
+  '/offline.html'
 ];
 
 self.addEventListener('install', function(event) {

@@ -3,7 +3,6 @@ var urlsToCache = [
   '/',
   '/index.css',
   '/index.html',
-  '/location.html',
   '/offline.html',
   '/products.html',
 ];
